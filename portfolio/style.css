@@ -1,0 +1,104 @@
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+ 
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+ 
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+/* Competence details toggle */
+.competence-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+ 
+.competence-details.show {
+  max-height: 2000px;
+  opacity: 1;
+}
+ 
+/* Chevron rotation */
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+ 
+/* Progress bar animation */
+.bar {
+  transition: width 0.5s ease;
+}
+ 
+/* Tab active state */
+.tab-btn.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+ 
+/* Year button active state */
+.year-btn.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+ 
+/* Filter button active state */
+.filter-btn.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+ 
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 4px;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+ 
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  header nav {
+    display: none;
+  }
+  
+  #mobile-menu:not(.hidden) + header nav {
+    display: block;
+  }
+}
+ 
+/* Floating particles background effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+}
